@@ -1,0 +1,15 @@
+{
+    "welcome": "Welcome",
+    "header": {
+      "home": "Home",
+      "about": "About",
+      "contact": "Contact",
+      "store": "Store",
+      "login": "Login"
+    },
+    "home": {
+      "c1": "CHEAP",
+      "c2": "FAST DELIVERY",
+      "c3": "TRANSPARENT"
+    }
+  }

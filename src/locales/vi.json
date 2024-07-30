@@ -1,0 +1,15 @@
+{
+    "welcome": "Xin chào",
+    "header": {
+      "home": "Trang chủ",
+      "about": "Về chúng tôi",
+      "contact": "Liên hệ",
+      "store": "Cửa hàng",
+      "login": "Đăng nhập"
+    },
+    "home": {
+      "c1": "RẺ",
+      "c2": "GIAO HÀNG NHANH",
+      "c3": "UY TÍN"
+    }
+  }
