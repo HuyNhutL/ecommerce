@@ -1,5 +1,6 @@
 body  {
-    background-image: url("./assets/background.jpg");
+    /*background-image: url("./assets/background.jpg");*/
+    background-color: rgba(128 , 128, 128, 0.1);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

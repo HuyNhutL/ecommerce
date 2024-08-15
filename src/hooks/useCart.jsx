@@ -1,30 +1,36 @@
-import useCookie from './useCookie';
+import { useState, useEffect } from 'react';
 
 function useCart() {
-    const [cart, setCart] = useCookie('shoppingCart');
+    const [cart, setCart] = useState(() => {
+        // Initialize the cart from localStorage, or as an empty array
+        const storedCart = localStorage.getItem('shoppingCart');
+        return storedCart ? JSON.parse(storedCart) : [];
+    });
 
-    // Parse the cart from cookie or initialize it as an empty array
-    const parsedCart = cart ? JSON.parse(cart) : [];
+    // Use useEffect to update localStorage whenever the cart changes
+    useEffect(() => {
+        localStorage.setItem('shoppingCart', JSON.stringify(cart));
+    }, [cart]);
 
     // Add an item to the cart
     const addItem = (item) => {
-        const updatedCart = [...parsedCart, item];
-        setCart(JSON.stringify(updatedCart));
+        const updatedCart = [...cart, item];
+        setCart(updatedCart);
     };
 
     // Remove an item from the cart by index
     const removeItem = (index) => {
-        const updatedCart = parsedCart.filter((_, i) => i !== index);
-        setCart(JSON.stringify(updatedCart));
+        const updatedCart = cart.filter((_, i) => i !== index);
+        setCart(updatedCart);
     };
 
     // Clear the cart
     const clearCart = () => {
-        setCart(JSON.stringify([]));
+        setCart([]);
     };
 
     return {
-        cart: parsedCart,
+        cart,
         addItem,
         removeItem,
         clearCart,
